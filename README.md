@@ -90,7 +90,7 @@ Start the frontend development server:
 bash
 Copy
 npm start
-The frontend will run on http://localhost:3000.
+The frontend will run on http://localhost:5173.
 
 4. Set Up MySQL
 Start the MySQL server:
