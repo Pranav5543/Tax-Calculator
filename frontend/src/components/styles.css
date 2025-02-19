@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Prevent scrollbar */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.app-container.dark-mode {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #fff;
+}
+
+.header-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "roboto", Arial,;
+  margin-bottom: 10px;
+  color: #000; /* Black in light mode */
+  transition: color 0.3s;
+}
+
+.dark-mode .title {
+  color: #ff3838; /* Red in dark mode */
+}
+
+.subtitle {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-family: "roboto", Arial,;
+  color: #000; /* Black in light mode */
+  transition: color 0.3s;
+}
+
+.dark-mode .subtitle {
+  color: #007bff; /* Blue in dark mode */
+}
+
+.dark-mode-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+}
+
+.main-content {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "roboto", sans-serif;
+}
+
+.calculator-card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  animation: glow 3s infinite alternate;
+}
+
+.dark-mode .calculator-card {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  }
+}
+
+.calculator-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+.dark-mode input {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: #555;
+}
+
+input::placeholder {
+  color: #666;
+}
+
+.dark-mode input::placeholder {
+  color: #999;
+}
+
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.calculate-button, .reset-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.calculate-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.reset-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.calculate-button:hover, .reset-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.calculate-button:active, .reset-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.result-container {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(0, 123, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.dark-mode .result-container {
+  background-color: rgba(0, 123, 255, 0.2);
+  color: #fff;
+}
+
+.result-text span {
+  color: #007bff;
+}
+
+.dark-mode .result-text span {
+  color: #00a8ff;
+}
+
+.download-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.download-button:hover {
+  background-color: #218838;
+}
+
+.right-side-content {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dark-mode .right-side-content {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+.tax-tips,
+.recent-updates {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+  flex: 1;
+}
+
+.dark-mode .tax-tips,
+.dark-mode .recent-updates {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+.tax-tips h3,
+.recent-updates h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.dark-mode .tax-tips h3,
+.dark-mode .recent-updates h3 {
+  color: #fff;
+}
+
+.tax-tips ul,
+.recent-updates ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.tax-tips li,
+.recent-updates li {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.dark-mode .tax-tips li,
+.dark-mode .recent-updates li {
+  color: #ccc;
+}
+
+.tax-graph h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.dark-mode .tax-graph h3 {
+  color: #fff;
+}
